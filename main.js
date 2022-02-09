@@ -74,8 +74,9 @@ async function getRandomCountries() {
       AllCases(data);
     });
 }
+window.onload = getRandomCountries;
 
-goButton.addEventListener("click", getRandomCountries);
+//goButton.addEventListener("click", getRandomCountries);
 myInput.addEventListener("input", (e) => {
   //console.log(e.target.value);
   const value = e.target.value;
