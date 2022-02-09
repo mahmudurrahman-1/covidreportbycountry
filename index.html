@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <title>Corona ApI</title>
+  </head>
+  <body>
+    <nav
+      class="navbar is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/index.html">
+          ☢️
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Filter By Country
+          </a>
+
+          <div class="field navbar-item ">
+            <div class="control">
+              <input
+                class="input is-primary input is-rounded myinput"
+                type="text"
+                placeholder="Filter By Country"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="total-cases  navbar-item level"></div>
+    </nav>
+    <section class="hero is-info ">
+      <div class="hero-body is-vcentered">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            CoronaVirus Statistics
+          </h1>
+          <h2 class="subtitle">
+            Click Go to recive Statistics
+          </h2>
+          <button class="go-button button is-primary">GO</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="columns  is-multiline is-mobile random-countries">
+        <!--First-->
+      </div>
+    </div>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>
