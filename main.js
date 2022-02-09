@@ -9,14 +9,14 @@ async function getRandomCountries() {
   randomElement.innerHTML = "";
   totalCases.innerHTML = "";
   await fetch(API_URL)
-    .then(response => response.json())
-    .then(data =>
-      data.map(data => {
+    .then((response) => response.json())
+    .then((data) =>
+      data.map((data) => {
         //console.log(data);
         randomElement.innerHTML += `
         <div class="column">
           <div class="card">
-            <header class="card-header has-background-primary">
+            <header class="card-header has-background-danger">
               <p class="card-header-title has-text-white">
                 ${data.country}
               </p>
@@ -24,14 +24,14 @@ async function getRandomCountries() {
             <div class="card-content">
               <div class="content">
               <p class="subtitle is-6">Cases: <span class="tag is-danger">${data.cases}</span></p>
-              <p class="subtitle is-6">Today Cases: <span class="tag is-success">${data.todayCases}</span></p>
-              <p class="subtitle is-6">Deaths: <span class="tag is-success">${data.deaths}</span></p>
-              <p class="subtitle is-6">Today Deaths: <span class="tag is-success">${data.todayDeaths}</span></p>
+              <p class="subtitle is-6">Today Cases: <span class="tag is-warning">${data.todayCases}</span></p>
+              <p class="subtitle is-6">Deaths: <span class="tag is-warning">${data.deaths}</span></p>
+              <p class="subtitle is-6">Today Deaths: <span class="tag is-danger">${data.todayDeaths}</span></p>
               
               </div>
             </div>
             <footer class="card-footer">
-              <p href="#" class="card-footer-item has-background-primary">Recovered: ${data.recovered}</p>
+              <p href="#" class="card-footer-item is-danger">Recovered: ${data.recovered}</p>
               <p href="#" class="card-footer-item">Active: ${data.active}</p>
               <p href="#" class="card-footer-item">Critical: ${data.critical}</p>
             </footer>
@@ -62,8 +62,8 @@ async function getRandomCountries() {
     );
 
   await fetch(ALL_CASES)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       totalCases.innerHTML += `
       <div class="level-item has-text-centered">
         <div>
@@ -88,12 +88,12 @@ async function getRandomCountries() {
 }
 
 goButton.addEventListener("click", getRandomCountries);
-myInput.addEventListener("input", e => {
+myInput.addEventListener("input", (e) => {
   //console.log(e.target.value);
   const value = e.target.value;
   const countryName = document.querySelectorAll(".card-header-title");
   console.log(countryName);
-  countryName.forEach(name => {
+  countryName.forEach((name) => {
     if (name.innerText.toLowerCase().includes(value.toLowerCase())) {
       name.parentElement.parentElement.parentElement.style.display = "block";
     } else {
