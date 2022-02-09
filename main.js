@@ -33,10 +33,27 @@ const AllCountries = (data) => {
   randomElement.insertAdjacentHTML("beforeend", div);
 };
 
+/****Clock Maker */
+
 const AllCases = (data) => {
   totalCases.innerHTML = "";
+  const date = new Date();
+  const options = {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  };
+
+  const output = new Intl.DateTimeFormat("en-Us", options).format(date);
   const html = `
       <div class="level-item has-text-centered">
+        <p class="tag are-large" id="clock">
+        </p>
+      </div>
+     <div class="level-item has-text-centered">
         <div>
             <p class="heading">Total Cases</p>
             <p class="title tag is-warning">${data.cases}</p>
@@ -56,6 +73,8 @@ const AllCases = (data) => {
     </div>
         `;
   totalCases.insertAdjacentHTML("beforeend", html);
+  showTime();
+  setInterval(showTime, 1000);
 };
 
 async function getRandomCountries() {
@@ -89,6 +108,40 @@ myInput.addEventListener("input", (e) => {
     }
   });
 });
+
+const showTime = () => {
+  const date = new Date();
+  let hours = `${date.getHours()}`.padStart(2, 0);
+  const minutes = `${date.getMinutes()}`.padStart(2, 0);
+  const seconds = `${date.getSeconds()}`.padStart(2, 0);
+
+  /****pass value as argument */
+  const formatter = formatChanger(hours);
+  hours = checkTimer(hours);
+  document.getElementById(
+    "clock"
+  ).textContent = `${hours}:${minutes}:${seconds} ${formatter}`;
+};
+
+const formatChanger = (time) => {
+  let changer = "AM";
+  if (time >= 12) {
+    changer = "PM";
+  }
+  return changer;
+};
+
+const checkTimer = (time) => {
+  if (time > 12) {
+    return (time = time - 12);
+  } else if (time === 00) {
+    return (time = 12);
+  } else {
+    return time;
+  }
+};
+
+// const timeChanger = (time) => {};
 
 // const request = new XMLHttpRequest();
 // request.open("GET", "https://coronavirus-19-api.herokuapp.com/countries");
