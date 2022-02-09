@@ -4,3 +4,15 @@
 .level-item {
   margin: 0.5rem;
 }
+.go-button {
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
+}
+
+.myinput {
+  width: 20rem;
+}
+.myinput:focus {
+  width: 25rem;
+  transition: 0.3s;
+}
