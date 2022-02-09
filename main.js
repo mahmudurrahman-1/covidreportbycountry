@@ -8,7 +8,7 @@ const AllCountries = (data) => {
   const div = `
         <div class="column">
           <div class="card">
-            <header class="card-header has-background-danger">
+            <header class="card-header has-background-info">
               <p class="card-header-title has-text-white">
                 ${data.country}
               </p>
@@ -23,9 +23,9 @@ const AllCountries = (data) => {
               </div>
             </div>
             <footer class="card-footer">
-              <p href="#" class="card-footer-item is-danger">Recovered: ${data.recovered}</p>
-              <p href="#" class="card-footer-item">Active: ${data.active}</p>
-              <p href="#" class="card-footer-item">Critical: ${data.critical}</p>
+              <p href="#" class="card-footer-item tag is-success">Recovered: ${data.recovered}</p>
+              <p href="#" class="card-footer-item tag tag is-danger">Active: ${data.active}</p>
+              <p href="#" class="card-footer-item tag is-warning">Critical: ${data.critical}</p>
             </footer>
           </div>
           </div>      
@@ -39,19 +39,19 @@ const AllCases = (data) => {
       <div class="level-item has-text-centered">
         <div>
             <p class="heading">Total Cases</p>
-            <p class="title">${data.cases}</p>
+            <p class="title tag is-warning">${data.cases}</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
             <p class="heading has-text-white">Total Deaths</p>
-            <p class="title has-text-white">${data.deaths}</p>
+            <p class="title has-text-white has-background-black tag is-danger">${data.deaths}</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
       <div>
           <p class="heading">Total Recovered</p>
-          <p class="title">${data.recovered}</p>
+          <p class="title tag is-success">${data.recovered}</p>
       </div>
     </div>
         `;
