@@ -16,3 +16,17 @@
   width: 25rem;
   transition: 0.3s;
 }
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .navbar-start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
