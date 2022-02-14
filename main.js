@@ -5,17 +5,22 @@ const totalCases = document.querySelector(".total-cases");
 const goButton = document.querySelector(".go-button");
 const myInput = document.querySelector("input");
 const AllCountries = (data) => {
+  console.log(data);
   const div = `
         <div class="column">
           <div class="card">
             <header class="card-header has-background-info">
               <p class="card-header-title has-text-white">
-                ${data.country}
+              <span class="h2">${data.country} </span>
               </p>
             </header>
             <div class="card-content">
               <div class="content">
-              <p class="subtitle is-6">Cases: <span class="tag is-danger">${data.cases}</span></p>
+              <p class="subtitle is-6">Total Tests: <span class="tag is-warning">${data.totalTests}</span></p>
+              <p class="subtitle is-6">Case 1/million: <span class="tag is-warning">${data.casesPerOneMillion}</span></p>
+              <p class="subtitle is-6">Deaths 1/million: <span class="tag is-danger">${data.deathsPerOneMillion}</span></p>
+              <p class="subtitle is-6">Test 1/million: <span class="tag is-warning">${data.testsPerOneMillion}</span></p>
+              <p class="subtitle is-6">Total Cases: <span class="tag is-danger">${data.cases}</span></p>
               <p class="subtitle is-6">Today Cases: <span class="tag is-warning">${data.todayCases}</span></p>
               <p class="subtitle is-6">Deaths: <span class="tag is-warning">${data.deaths}</span></p>
               <p class="subtitle is-6">Today Deaths: <span class="tag is-danger">${data.todayDeaths}</span></p>
@@ -140,33 +145,3 @@ const checkTimer = (time) => {
     return time;
   }
 };
-
-// const timeChanger = (time) => {};
-
-// const request = new XMLHttpRequest();
-// request.open("GET", "https://coronavirus-19-api.herokuapp.com/countries");
-// request.send();
-
-// request.addEventListener("load", function () {
-//   console.log(this.responseText);
-//   const [data] = JSON.parse(this.response);
-//   console.log(data);
-// });
-
-// const request = fetch("https://coronavirus-19-api.herokuapp.com/countries");
-// console.log(request);
-
-// const getData = function (countries) {
-//   fetch(`https://coronavirus-19-api.herokuapp.com/${countries}`)
-//     .then((res) => {
-//       console.log(res);
-//       return res.json();
-//     })
-//     .then((data) => {
-//       console.log(data);
-//       data.map((c) => {
-//         console.log(c);
-//       });
-//     });
-// };
-// getData("countries");
