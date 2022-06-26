@@ -1,4 +1,4 @@
-## Show your country information about covid-19
+## Search your country information about covid-19
 
 ## [Report](https://covidstati.netlify.app)
 ## Introduction
